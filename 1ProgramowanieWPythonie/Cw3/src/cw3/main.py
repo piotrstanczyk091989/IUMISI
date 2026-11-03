@@ -3,9 +3,8 @@ import requests
 import csv
 
 
-# ==========================================
+
 # 1. POBIERANIE PLIKU
-# ==========================================
 
 def download_file(url, filename="latest.csv"):
     """
@@ -26,9 +25,8 @@ def download_file(url, filename="latest.csv"):
         raise
 
 
-# ==========================================
+
 # 2. KLASA ETL
-# ==========================================
 
 class ETLProcess:
 
@@ -39,9 +37,8 @@ class ETLProcess:
         """
         self.filename = filename
 
-    # --------------------------------------
+
     # 2.1. ODCZYT PLIKU GENERATOREM
-    # --------------------------------------
 
     def read_file(self):
         """
@@ -54,9 +51,8 @@ class ETLProcess:
             for row in reader:
                 yield row
 
-    # --------------------------------------
+
     # 2.2. TRANSFORMACJA DANYCH
-    # --------------------------------------
 
     def process_data(self):
 
@@ -96,9 +92,8 @@ class ETLProcess:
             # Generator zwraca wyniki dla jednego wiersza
             yield number, total, average, missing
 
-    # --------------------------------------
+
     # 2.3. ZAPIS WYNIKÓW DO PLIKÓW
-    # --------------------------------------
 
     def save_results(self):
 
@@ -135,9 +130,7 @@ class ETLProcess:
         print("Zapisano plik missing_values.csv")
 
 
-# ==========================================
 # 3. URUCHOMIENIE PROGRAMU
-# ==========================================
 
 url = "https://oleksandr-fedoruk.com/sggw/podyplomowe/file"
 
